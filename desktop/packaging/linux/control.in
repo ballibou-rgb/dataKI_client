@@ -1,0 +1,12 @@
+Package: dataki-client
+Version: @VERSION@
+Section: net
+Priority: optional
+Architecture: amd64
+Depends: libc6, libglib2.0-0, libgtk-3-0 (>= 3.22), libayatana-appindicator3-1
+Maintainer: dataNet.ovh Ltd. <support@datanet.ovh>
+Homepage: https://ai.datanet.ovh
+Description: Native client for dataKI
+ Native desktop client for the dataKI AI chat service. Sign in through your
+ browser, then chat with streaming responses, model selection and history
+ without keeping a browser open.

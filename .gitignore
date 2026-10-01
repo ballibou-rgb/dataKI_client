@@ -1,0 +1,32 @@
+# ---- Desktop (C/GTK3, Meson) ----
+/desktop/build-linux/
+/desktop/build-windows/
+/desktop/build/
+/desktop/dist/
+*.o
+*.obj
+*.exe
+*.AppImage
+*.deb
+
+# ---- Android (Gradle) ----
+/android/.gradle/
+/android/build/
+/android/app/build/
+/android/local.properties
+/android/captures/
+/android/.cxx/
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# ---- IDE / Editor ----
+.idea/
+*.iml
+.vscode/
+*.swp
+*~
+
+# ---- Misc ----
+.DS_Store

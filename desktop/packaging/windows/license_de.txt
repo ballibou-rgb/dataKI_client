@@ -1,0 +1,39 @@
+dataKI Client – Endbenutzer-Lizenzvereinbarung
+
+Copyright (c) dataNet.ovh Ltd. Alle Rechte vorbehalten.
+
+Diese Software ("dataKI Client") wird Ihnen von der dataNet.ovh Ltd.
+("Lizenzgeber") zur Verfuegung gestellt. Durch die Installation oder Nutzung
+der Software erklaeren Sie sich mit den folgenden Bedingungen einverstanden.
+
+1. Nutzungsrecht
+   Der Lizenzgeber gewaehrt Ihnen ein nicht ausschliessliches, nicht
+   uebertragbares Recht zur Installation und Nutzung des dataKI Client auf
+   Geraeten, die sich in Ihrem Besitz oder unter Ihrer Kontrolle befinden, zum
+   Zweck des Zugriffs auf den dataKI-Dienst.
+
+2. Eigentum
+   Die Software ist urheberrechtlich geschuetzt und bleibt Eigentum des
+   Lizenzgebers. Es werden keine Rechte eingeraeumt, die nicht ausdruecklich in
+   dieser Vereinbarung genannt sind.
+
+3. Einschraenkungen
+   Sie duerfen die Software nicht zurueckentwickeln, dekompilieren oder
+   disassemblieren, soweit dies nicht durch zwingendes Recht gestattet ist.
+
+4. Datenverarbeitung
+   Chat-Inhalte werden auf den Servern des Dienstes verarbeitet. Der Client
+   speichert selbst keine Chat-Verlaeufe dauerhaft. Einzelheiten regelt die
+   Datenschutzerklaerung des Dienstes.
+
+5. Gewaehrleistung und Haftung
+   Die Software wird "wie besehen" und ohne jegliche ausdrueckliche oder
+   stillschweigende Gewaehrleistung bereitgestellt. Der Lizenzgeber haftet nicht
+   fuer mittelbare Schaeden, soweit gesetzlich zulaessig.
+
+6. Schlussbestimmungen
+   Es gilt das Recht am Sitz des Lizenzgebers. Sollten einzelne Bestimmungen
+   unwirksam sein, bleibt die Wirksamkeit der uebrigen Bestimmungen unberuehrt.
+
+Durch Fortsetzen der Installation bestaetigen Sie, diese Vereinbarung gelesen zu
+haben und ihr zuzustimmen.

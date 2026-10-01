@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: dataki-client 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-01 00:00+0000\n"
+"PO-Revision-Date: 2026-10-01 00:00+0000\n"
+"Last-Translator: dataNet.ovh Ltd.\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. app.c
+msgid "dataKI keeps running in the system tray."
+msgstr "dataKI läuft weiter im Infobereich."
+
+#. tray / menu
+msgid "Open"
+msgstr "Öffnen"
+
+msgid "Quit"
+msgstr "Beenden"
+
+msgid "About dataKI"
+msgstr "Über dataKI"
+
+#. main_window.c
+msgid "Model"
+msgstr "Modell"
+
+msgid "Effort"
+msgstr "Aufwand"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "New Chat"
+msgstr "Neuer Chat"
+
+msgid "Search chats…"
+msgstr "Chats durchsuchen…"
+
+msgid "Not signed in yet"
+msgstr "Noch nicht angemeldet"
+
+msgid "Login and chat arrive in a later phase."
+msgstr "Login und Chat kommen in einer späteren Phase."
+
+msgid "Type a message…"
+msgstr "Nachricht eingeben…"
+
+msgid "Send"
+msgstr "Senden"
+
+#. about_dialog.c
+msgid "Native client for dataKI."
+msgstr "Nativer Client für dataKI."
+
+msgid "Open in browser"
+msgstr "Im Browser öffnen"
+
+#. desktop file
+msgid "AI Chat Client"
+msgstr "KI-Chat-Client"
+
+msgid "Native client for dataKI"
+msgstr "Nativer Client für dataKI"
+
+msgid "AI;Chat;dataKI;Assistant;"
+msgstr "KI;Chat;dataKI;Assistent;"

@@ -1,0 +1,33 @@
+#include <winver.h>
+
+/* Application icon — id 101 is loaded by the tray backend (tray_win.c). */
+101 ICON "dataki.ico"
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION    @VER_MAJOR@,@VER_MINOR@,@VER_PATCH@,0
+ PRODUCTVERSION @VER_MAJOR@,@VER_MINOR@,@VER_PATCH@,0
+ FILEFLAGSMASK  VS_FFI_FILEFLAGSMASK
+ FILEFLAGS      0x0L
+ FILEOS         VOS__WINDOWS32
+ FILETYPE       VFT_APP
+ FILESUBTYPE    VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName",      "dataNet.ovh Ltd."
+            VALUE "FileDescription",  "dataKI Client"
+            VALUE "FileVersion",      "@VERSION@"
+            VALUE "InternalName",     "dataki-client"
+            VALUE "LegalCopyright",   "\xA9 dataNet.ovh Ltd."
+            VALUE "OriginalFilename", "dataki-client.exe"
+            VALUE "ProductName",      "dataKI Client"
+            VALUE "ProductVersion",   "@VERSION@"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END

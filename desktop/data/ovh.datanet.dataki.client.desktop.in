@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=dataKI
+GenericName=AI Chat Client
+Comment=Native client for dataKI
+Exec=dataki-client
+Icon=ovh.datanet.dataki.client
+Terminal=false
+Categories=Network;Chat;Utility;
+Keywords=AI;Chat;dataKI;Assistant;
+StartupNotify=true
+StartupWMClass=dataki-client

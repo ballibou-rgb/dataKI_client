@@ -1,0 +1,38 @@
+dataKI Client - End User License Agreement
+
+Copyright (c) dataNet.ovh Ltd. All rights reserved.
+
+This software ("dataKI Client") is provided to you by dataNet.ovh Ltd. (the
+"Licensor"). By installing or using the software you agree to the terms below.
+
+1. Grant of License
+   The Licensor grants you a non-exclusive, non-transferable right to install
+   and use the dataKI Client on devices you own or control, for the purpose of
+   accessing the dataKI service.
+
+2. Ownership
+   The software is protected by copyright and remains the property of the
+   Licensor. No rights are granted other than those expressly stated in this
+   agreement.
+
+3. Restrictions
+   You may not reverse engineer, decompile or disassemble the software, except
+   to the extent permitted by applicable mandatory law.
+
+4. Data Processing
+   Chat content is processed on the service's servers. The client itself does
+   not permanently store chat history. Details are governed by the service's
+   privacy policy.
+
+5. Warranty and Liability
+   The software is provided "as is" without warranty of any kind, express or
+   implied. To the extent permitted by law, the Licensor is not liable for
+   indirect damages.
+
+6. Final Provisions
+   The law at the Licensor's registered seat applies. Should individual
+   provisions be invalid, the validity of the remaining provisions is
+   unaffected.
+
+By continuing the installation you confirm that you have read and agree to this
+agreement.

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">dataKI</string>
+    <string name="channel_general">General</string>
+
+    <string name="not_signed_in">Not signed in yet</string>
+    <string name="login_later">Login and chat arrive in a later phase.</string>
+    <string name="login_received_placeholder">Login redirect received — exchange arrives in M3.</string>
+    <string name="type_message">Type a message…</string>
+    <string name="send">Send</string>
+
+    <string name="action_about">About</string>
+    <string name="about_title">About dataKI</string>
+    <string name="about_message">dataKI — native client.\n\n© dataNet.ovh Ltd.</string>
+</resources>

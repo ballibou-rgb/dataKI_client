@@ -1,0 +1,6 @@
+src/app.c
+src/core/tray_linux.c
+src/core/tray_win.c
+src/ui/main_window.c
+src/ui/about_dialog.c
+data/ovh.datanet.dataki.client.desktop.in
