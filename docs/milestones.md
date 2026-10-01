@@ -49,9 +49,16 @@ Token-Footer. Desktop: md4c-Rendering, Android: Markwon.
 Suche, Export, Projekte, Dateien, RAG, Tools, Research, Bild/Sprache/Code
 (Architektur-Phasen 2–4).
 
+## Branding
+
+Das vom Nutzer gelieferte Logo ist eingebaut: die Bildmarke (Gehirn/Klammern)
+wurde freigestellt (Text + Hintergrund entfernt, transparent) und in alle
+Icon-Formate überführt — Windows `.ico` (Multi-Größe), Linux hicolor-PNGs
+(16–512), Android Adaptive Icon (Vordergrund freigestellt, weißer Hintergrund).
+Quell-/Markendateien liegen unter `brand/`.
+
 ## Offene Punkte (vom Nutzer zu liefern)
 
-- **Logo/Icon** für die AI (kommt in Phase 2; aktuell Platzhalter-Icon).
 - **Webprojekt** (PHP) für M2.
 - **App-Signatur-Fingerprint** (SHA-256) aus dem Android-Keystore → für
   `assetlinks.json` (M2/M3).

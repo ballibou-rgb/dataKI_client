@@ -112,8 +112,11 @@ if host_system != 'windows'
     install:     true,
     install_dir: join_paths(get_option('datadir'), 'applications'))
 
-  install_data('data/icons/hicolor/scalable/apps/ovh.datanet.dataki.client.svg',
-    install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', 'scalable', 'apps'))
+  foreach size : ['16', '24', '32', '48', '64', '128', '256', '512']
+    install_data(
+      'data/icons/hicolor' / (size + 'x' + size) / 'apps/ovh.datanet.dataki.client.png',
+      install_dir: get_option('datadir') / 'icons' / 'hicolor' / (size + 'x' + size) / 'apps')
+  endforeach
 
   install_data('data/ovh.datanet.dataki.client.metainfo.xml',
     install_dir: join_paths(get_option('datadir'), 'metainfo'))

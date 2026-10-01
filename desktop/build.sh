@@ -85,7 +85,7 @@ package_appimage() {
     --appdir "$appdir" \
     --plugin gtk \
     --desktop-file "$appdir/usr/share/applications/ovh.datanet.dataki.client.desktop" \
-    --icon-file "$appdir/usr/share/icons/hicolor/scalable/apps/ovh.datanet.dataki.client.svg" \
+    --icon-file "$appdir/usr/share/icons/hicolor/256x256/apps/ovh.datanet.dataki.client.png" \
     --output appimage
   log "Linux: wrote $(basename "$out")"
 }

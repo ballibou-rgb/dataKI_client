@@ -126,6 +126,22 @@ dataki_app_startup(GApplication *application)
 
   gtk_window_set_default_icon_name(DATAKI_APP_ID);
 
+  /* Also load the bundled icon so it shows even when running uninstalled. */
+  {
+    g_autoptr(GError) icon_error = NULL;
+    GdkPixbuf *icon = gdk_pixbuf_new_from_resource(
+        "/ovh/datanet/dataki/client/icons/app-256.png", &icon_error);
+    if (icon != NULL)
+      {
+        gtk_window_set_default_icon(icon);
+        g_object_unref(icon);
+      }
+    else
+      {
+        g_warning("Could not load bundled app icon: %s", icon_error->message);
+      }
+  }
+
   GtkCssProvider *provider = gtk_css_provider_new();
   gtk_css_provider_load_from_resource(provider,
       "/ovh/datanet/dataki/client/css/style.css");
