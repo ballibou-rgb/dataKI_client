@@ -31,10 +31,14 @@ Lauffähige Hüllen aller drei Clients, Tray-Verhalten, i18n DE/EN, komplette
 Paketierung (`.deb`, AppImage, NSIS DE/EN, ZIP) und Release-Pipeline. **Kein**
 echter Login/Chat.
 
-### M2 — Backend-Phase (PHP) — *braucht das Webprojekt*
-Neue Endpunkte `/api/v1/client/*` (info, login/start, login/exchange, logout,
-bootstrap), Bearer-Auth in `auth_current_user()`, Migration `server_keys`,
-App-Links `assetlinks.json`, Fixes aus Architektur 6.3.
+### M2 — Backend-Phase (PHP)  ✅
+Umgesetzt und end-to-end getestet (MariaDB 10.11 + PHP 8.3). Liegt als
+Drop-in-Paket unter `backend/` (neue `/api/v1/client/*`-Endpunkte,
+`includes/client_auth.php`, Auto-Migration `server_keys` + `client_login_codes`,
+Bearer-Geräte-Key in `auth_current_user()`, Root-`.htaccess`-Passthrough,
+zwei kleine Patches). Bestehende Handler (z. B. `chat_handler.php`) akzeptieren
+den Geräte-Key unverändert (Option A). Siehe `backend/README.md`.
+Offen: App-Links `assetlinks.json` (braucht Signatur-Fingerprint).
 
 ### M3 — Login (alle Clients)
 Desktop: Browser-Handoff per `127.0.0.1`-Loopback. Android: Custom-Tab →

@@ -1,0 +1,27 @@
+# Sensible Dateien vor direktem Web-Zugriff schützen
+<FilesMatch "^(config\.php|config\.local\.php|schema\.sql|.*\.sql)$">
+    Require all denied
+</FilesMatch>
+# Storage nicht direkt ausliefern (Zugriff nur über file.php)
+RedirectMatch 403 ^/.*/uploads_storage/.*$
+
+# ---------------------------------------------------------------------------
+# Native-Client (dataKI Desktop/Android): Authorization-Header an PHP
+# durchreichen. Apache/FPM/CGI entfernen "Authorization" sonst häufig, bevor
+# PHP ihn sieht — dann käme der Bearer <Geräte-Key> z.B. bei chat_handler.php
+# (im Projekt-Root) nicht an. Dieselbe Regel wie in api/v1/.htaccess, hier
+# zusätzlich für die Root-Handler.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule mod_setenvif.c>
+    SetEnvIfNoCase ^Authorization$ "(.+)" HTTP_AUTHORIZATION=$1
+</IfModule>
+
+<IfModule mod_authz_core.c>
+    CGIPassAuth On
+</IfModule>

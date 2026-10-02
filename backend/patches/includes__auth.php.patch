@@ -1,0 +1,36 @@
+--- a/includes/auth.php
++++ b/includes/auth.php
+@@ -25,6 +25,7 @@
+ require_once __DIR__ . '/proxy_client.php';
+ require_once __DIR__ . '/mail_templates.php';
+ require_once __DIR__ . '/phone_home.php';
++require_once __DIR__ . '/client_auth.php';
+ 
+ // Offener Herkunfts-/Lizenz-Ping (max. 1x/Tag, nicht blockierend).
+ phone_home_maybe();
+@@ -345,6 +346,13 @@
+ {
+     auth_start_session();
+ 
++    // Native-Client: Geraete-Key (Bearer dk_...) hat Vorrang und funktioniert
++    // in jedem AUTH_MODE, da der Client direkt mit diesem Server spricht.
++    $deviceUser = client_device_key_user();
++    if ($deviceUser) {
++        return $deviceUser;
++    }
++
+     if (AUTH_MODE === 'proxy') {
+         // Reverse-Proxy-Header-Auth: Identität kommt ausschließlich aus
+         // den vom vorgelagerten Proxy gesetzten Headern.
+@@ -547,6 +555,11 @@
+ function auth_require_admin(): array
+ {
+     $user = auth_require_login();
++    // Geraete-Key darf keine Admin-Aktionen ausfuehren (Architektur §5.4).
++    if (!empty($GLOBALS['auth_via_device_key'])) {
++        http_response_code(403);
++        exit('Admin-Zugriff mit Geraete-Key nicht erlaubt.');
++    }
+     // Gäste (offener Direct-Modus) zunächst zum Login schicken, damit
+     // sich ein Admin überhaupt anmelden kann.
+     if (!empty($user['is_guest'])) {

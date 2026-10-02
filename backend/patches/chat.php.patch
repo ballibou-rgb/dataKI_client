@@ -1,0 +1,16 @@
+--- a/chat.php
++++ b/chat.php
+@@ -24,6 +24,13 @@
+ 
+ $user = auth_require_login();
+ 
++// Native-Client-Login-Handoff: nach erfolgreicher Website-Anmeldung zurueck
++// zum Client-Endpunkt (siehe includes/client_auth.php).
++if ($__clientReturn = client_consume_post_login_redirect()) {
++    header('Location: ' . $__clientReturn);
++    exit;
++}
++
+ $pdo = Database::getConnection();
+ $stmt = $pdo->prepare(
+     'SELECT id, title, updated_at FROM `chats` WHERE `user_id` = :uid AND `is_archived` = 0 ORDER BY `updated_at` DESC'
