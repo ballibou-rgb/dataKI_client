@@ -9,6 +9,10 @@
     <string name="signed_in_placeholder">Angemeldet. Chat kommt in einer späteren Phase.</string>
     <string name="login_failed">Anmeldung fehlgeschlagen. Bitte erneut versuchen.</string>
 
+    <string name="type_message">Nachricht eingeben…</string>
+    <string name="send">Senden</string>
+    <string name="stop">Stopp</string>
+
     <string name="about_title">Über dataKI</string>
     <string name="about_message">dataKI – nativer Client.\n\n© dataNet.ovh Ltd.</string>
 </resources>

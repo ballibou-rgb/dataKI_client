@@ -64,7 +64,13 @@ Custom-Tab → App-Link-Rücksprung (`/app/login/callback`) → `exchange` →
 Geräte-Key in `EncryptedSharedPreferences` → `bootstrap` → angemeldete Ansicht.
 Neue Klassen: `HttpClient` (OkHttp), `AuthManager`. Login-Wizard-UI (ViewFlipper:
 Willkommen/Login ↔ angemeldet). Braucht serverseitig `assetlinks.json` (Template
-+ Anleitung in `backend/README.md`). Chat (Android M4) folgt.
++ Anleitung in `backend/README.md`).
+
+### M4 Android — Chat  ✅
+Streaming-Chat: `ChatClient` (OkHttp-Multipart + `SseParser`, kein Read-Timeout,
+Cancel), RecyclerView + `MessageAdapter` (User/Assistent-Bubbles), Modell-Spinner
+aus `bootstrap`, Senden/Stopp, Token-Anzeige. Im selben `MainActivity` wie der
+Login (ViewFlipper). Markdown aktuell Klartext. In Android Studio bauen.
 
 ### M5+ — Komfort & Zusatzfunktionen
 Suche, Export, Projekte, Dateien, RAG, Tools, Research, Bild/Sprache/Code

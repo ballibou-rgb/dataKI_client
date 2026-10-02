@@ -10,6 +10,10 @@
     <string name="signed_in_placeholder">Signed in. Chat arrives in the next phase.</string>
     <string name="login_failed">Sign-in failed. Please try again.</string>
 
+    <string name="type_message">Type a message…</string>
+    <string name="send">Send</string>
+    <string name="stop">Stop</string>
+
     <string name="about_title">About dataKI</string>
     <string name="about_message">dataKI — native client.\n\n© dataNet.ovh Ltd.</string>
 </resources>
