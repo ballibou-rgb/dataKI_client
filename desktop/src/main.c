@@ -8,6 +8,12 @@
 int main(int argc, char **argv)
 {
   setlocale(LC_ALL, "");
+
+  /* Deterministic program name so the X11 WM_CLASS / Wayland app-id match the
+   * installed .desktop file (StartupWMClass=dataki-client) and the taskbar
+   * picks up the installed icon. */
+  g_set_prgname("dataki-client");
+
   bindtextdomain(GETTEXT_PACKAGE, DATAKI_LOCALEDIR);
   bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
   textdomain(GETTEXT_PACKAGE);
