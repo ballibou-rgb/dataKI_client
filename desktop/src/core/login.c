@@ -389,7 +389,7 @@ dataki_login_bootstrap_async(const char              *server_url,
   d->user_data  = user_data;
 
   GTask *task = g_task_new(NULL, NULL, bootstrap_done, d);
-  g_task_set_task_data(task, g_strdup(device_key), g_free);
+  g_task_set_task_data(task, d, NULL); /* same struct; freed in bootstrap_done */
   g_task_run_in_thread(task, bootstrap_thread);
   g_object_unref(task);
 }

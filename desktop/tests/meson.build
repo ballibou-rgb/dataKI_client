@@ -7,3 +7,10 @@ config_test = executable('config-test',
   include_directories: include_directories('../src/core'))
 
 test('config', config_test)
+
+sse_test = executable('sse-test',
+  files('sse_test.c', '../src/core/sse.c'),
+  dependencies: [glib_dep],
+  include_directories: include_directories('../src/core'))
+
+test('sse', sse_test)

@@ -9,3 +9,15 @@
 .dim-label {
   opacity: 0.6;
 }
+
+.msg-user {
+  background-color: alpha(#3b82f6, 0.14);
+  border: 1px solid alpha(#3b82f6, 0.25);
+  border-radius: 10px;
+}
+
+.msg-assistant {
+  background-color: alpha(@theme_fg_color, 0.05);
+  border: 1px solid alpha(@theme_fg_color, 0.1);
+  border-radius: 10px;
+}

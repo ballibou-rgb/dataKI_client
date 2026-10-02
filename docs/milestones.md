@@ -49,9 +49,15 @@ Offline/401-Behandlung. Neue Core-Module: `http.c` (libcurl), `loopback.c`
 (GSocketService), `login.c` (Orchestrierung), echter `secret.c` (libsecret).
 **Android** — noch offen (Custom-Tab → App-Link-Rücksprung).
 
-### M4 — Chat (alle Clients)
-SSE-Streaming, Modellwahl, Denken-Anzeige, Abbrechen, Chat-Liste/Verlauf,
-Token-Footer. Desktop: md4c-Rendering, Android: Markwon.
+### M4 — Chat
+**Desktop ✅** — SSE-Streaming, Senden, Modellwahl (aus bootstrap), „Denken"-
+Bereich (einklappbar), Abbrechen (Stop), Chat-Liste + Verlauf laden,
+Token-Footer. Gegen einen Mock-SSE-Server (`tests/mock_server.py`) end-to-end
+verifiziert. Neue Core-Module: `sse.c` (+Test), `chat.c` (libcurl-Multipart-
+Streaming, Worker-Thread, Cancel), `api.c` (async GET). Markdown-Rendering
+aktuell Klartext (md4c-Feinschliff später). **Android** — nach dem Login.
+Token-Hinweis: der Chat nutzt die bestehenden Handler (`chat_handler.php`)
+unverändert mit dem Geräte-Key.
 
 ### M5+ — Komfort & Zusatzfunktionen
 Suche, Export, Projekte, Dateien, RAG, Tools, Research, Bild/Sprache/Code

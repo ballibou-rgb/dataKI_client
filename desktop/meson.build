@@ -84,6 +84,9 @@ sources = files(
   'src/core/http.c',
   'src/core/loopback.c',
   'src/core/login.c',
+  'src/core/sse.c',
+  'src/core/chat.c',
+  'src/core/api.c',
   'src/ui/main_window.c',
   'src/ui/about_dialog.c',
 ) + tray_src + resources
