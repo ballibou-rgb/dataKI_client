@@ -94,7 +94,24 @@ Tested against MariaDB 10.11 + PHP 8.3 (built-in server): `info` → website log
 (`{"success":true,"chats":[]}`) → `logout` (revoked) → `bootstrap` again (401);
 one-time code reuse rejected.
 
-## Pending (your input)
+## Android App-Links (for the Android login)
 
-- **Android App-Links**: serve `https://ai.datanet.ovh/.well-known/assetlinks.json`
-  with the app's signing-cert SHA-256 fingerprint (see `android/README.md`).
+The Android client returns from the browser via an https App-Link to
+`/app/login/callback` (handled by `login/start.php`'s redirect validation). For
+Android to open the app automatically, serve a Digital Asset Links file at
+
+```
+https://ai.datanet.ovh/.well-known/assetlinks.json
+```
+
+A template is included at `dataKIWebUI_V4/.well-known/assetlinks.json` — replace
+`REPLACE_WITH_YOUR_APP_SIGNING_SHA256_FINGERPRINT` with your release (and debug,
+if testing) signing-cert SHA-256 fingerprint:
+
+```sh
+keytool -list -v -keystore <your.keystore> -alias <alias> | grep SHA256
+```
+
+It must be served as `application/json` with no redirect. (The debug build uses
+`ovh.datanet.dataki.client.debug`; add that package + its fingerprint too if you
+test the debug variant.)

@@ -55,9 +55,16 @@ Bereich (einklappbar), Abbrechen (Stop), Chat-Liste + Verlauf laden,
 Token-Footer. Gegen einen Mock-SSE-Server (`tests/mock_server.py`) end-to-end
 verifiziert. Neue Core-Module: `sse.c` (+Test), `chat.c` (libcurl-Multipart-
 Streaming, Worker-Thread, Cancel), `api.c` (async GET). Markdown-Rendering
-aktuell Klartext (md4c-Feinschliff später). **Android** — nach dem Login.
+aktuell Klartext (md4c-Feinschliff später). **Android-Chat** — noch offen.
 Token-Hinweis: der Chat nutzt die bestehenden Handler (`chat_handler.php`)
 unverändert mit dem Geräte-Key.
+
+### M3 Android — Login  ✅
+Custom-Tab → App-Link-Rücksprung (`/app/login/callback`) → `exchange` →
+Geräte-Key in `EncryptedSharedPreferences` → `bootstrap` → angemeldete Ansicht.
+Neue Klassen: `HttpClient` (OkHttp), `AuthManager`. Login-Wizard-UI (ViewFlipper:
+Willkommen/Login ↔ angemeldet). Braucht serverseitig `assetlinks.json` (Template
++ Anleitung in `backend/README.md`). Chat (Android M4) folgt.
 
 ### M5+ — Komfort & Zusatzfunktionen
 Suche, Export, Projekte, Dateien, RAG, Tools, Research, Bild/Sprache/Code

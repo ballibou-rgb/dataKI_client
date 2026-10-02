@@ -2,13 +2,13 @@
 <resources>
     <string name="channel_general">Allgemein</string>
 
-    <string name="not_signed_in">Noch nicht angemeldet</string>
-    <string name="login_later">Login und Chat kommen in einer späteren Phase.</string>
-    <string name="login_received_placeholder">Login-Rücksprung empfangen – Austausch folgt in M3.</string>
-    <string name="type_message">Nachricht eingeben…</string>
-    <string name="send">Senden</string>
+    <string name="welcome_title">Willkommen bei dataKI</string>
+    <string name="welcome_subtitle">Melde dich im Browser an, um zu chatten.</string>
+    <string name="sign_in">Anmelden</string>
+    <string name="sign_out">Abmelden</string>
+    <string name="signed_in_placeholder">Angemeldet. Chat kommt in einer späteren Phase.</string>
+    <string name="login_failed">Anmeldung fehlgeschlagen. Bitte erneut versuchen.</string>
 
-    <string name="action_about">Über</string>
     <string name="about_title">Über dataKI</string>
     <string name="about_message">dataKI – nativer Client.\n\n© dataNet.ovh Ltd.</string>
 </resources>

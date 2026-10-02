@@ -46,10 +46,12 @@ dependencies {
     implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-    // Login prep (M3): Custom Tabs for the browser hand-off + App-Links.
+    // Login: Custom Tabs for the browser hand-off + App-Links.
     implementation 'androidx.browser:browser:1.8.0'
     // Device-key storage (encrypted) — see core/SecretStore.java.
     implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+    // HTTP for exchange / bootstrap / chat.
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
 
     testImplementation 'junit:junit:4.13.2'
 }
