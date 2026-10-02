@@ -2,7 +2,7 @@
 
 #include <glib/gi18n.h>
 
-#include "config.h"
+#include "dataki-config.h"
 
 void
 dataki_about_dialog_show(GtkWindow *parent)

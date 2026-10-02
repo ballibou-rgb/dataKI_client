@@ -2,7 +2,7 @@
 
 #include <glib/gi18n.h>
 
-#include "config.h"
+#include "dataki-config.h"
 #include "core/config.h"
 #include "core/tray.h"
 #include "ui/main_window.h"
@@ -108,9 +108,20 @@ action_quit(GSimpleAction *action, GVariant *param, gpointer user_data)
   dataki_app_request_quit(DATAKI_APP(user_data));
 }
 
+static void
+action_logout(GSimpleAction *action, GVariant *param, gpointer user_data)
+{
+  (void)action;
+  (void)param;
+  DatakiApp *self = DATAKI_APP(user_data);
+  if (self->window != NULL)
+    dataki_main_window_logout(self->window);
+}
+
 static const GActionEntry app_actions[] = {
-  { "about", action_about, NULL, NULL, NULL, {0} },
-  { "quit",  action_quit,  NULL, NULL, NULL, {0} },
+  { "about",  action_about,  NULL, NULL, NULL, {0} },
+  { "logout", action_logout, NULL, NULL, NULL, {0} },
+  { "quit",   action_quit,   NULL, NULL, NULL, {0} },
 };
 
 /* -------------------------------------------------------------------------- */
@@ -173,6 +184,8 @@ dataki_app_activate(GApplication *application)
                                    on_tray_show, on_tray_quit, self);
       if (self->tray == NULL)
         g_message("No system tray available — closing the window will quit.");
+
+      dataki_main_window_try_autologin(self->window);
     }
 
   dataki_app_show_window(self);

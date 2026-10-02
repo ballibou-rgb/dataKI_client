@@ -10,4 +10,10 @@ G_DECLARE_FINAL_TYPE(DatakiMainWindow, dataki_main_window,
 
 DatakiMainWindow *dataki_main_window_new(GtkApplication *app);
 
+/* Try to resume a stored session (keyring → bootstrap). Call once at startup. */
+void dataki_main_window_try_autologin(DatakiMainWindow *self);
+
+/* Revoke + forget the device key and return to the login page. */
+void dataki_main_window_logout(DatakiMainWindow *self);
+
 G_END_DECLS

@@ -19,12 +19,14 @@ host_system = host_machine.system()
 
 # ---------------------------------------------------------------------------
 # Dependencies
-# M1 deliberately links against GTK3 only (plus the platform tray backend).
-# curl / json-glib / md4c / libsecret are added from M2 onwards (see
-# docs/milestones.md). The secret store is a stub in M1.
+# GTK3 UI + networking (libcurl, json-glib) for the login/chat flow. The
+# secret store uses libsecret on Linux and the Credential Manager on Windows.
 # ---------------------------------------------------------------------------
-gtk_dep = dependency('gtk+-3.0', version: '>= 3.22')
-deps    = [gtk_dep]
+gtk_dep  = dependency('gtk+-3.0', version: '>= 3.22')
+curl_dep = dependency('libcurl')
+json_dep = dependency('json-glib-1.0')
+gio_dep  = dependency('gio-2.0')
+deps     = [gtk_dep, curl_dep, json_dep, gio_dep]
 
 tray_src = []
 if host_system == 'windows'
@@ -41,6 +43,14 @@ else
     message('ayatana-appindicator3 not found — tray disabled, window close will quit.')
   endif
   tray_src += files('src/core/tray_linux.c')
+
+  secret_dep = dependency('libsecret-1', required: false)
+  if secret_dep.found()
+    deps += secret_dep
+    add_project_arguments('-DHAVE_LIBSECRET=1', language: 'c')
+  else
+    message('libsecret-1 not found — device key will not persist (stub).')
+  endif
 endif
 
 # ---------------------------------------------------------------------------
@@ -52,7 +62,7 @@ conf.set_quoted('DATAKI_APP_ID',     app_id)
 conf.set_quoted('GETTEXT_PACKAGE',   gettext_package)
 conf.set_quoted('DATAKI_LOCALEDIR',  join_paths(get_option('prefix'), get_option('localedir')))
 conf.set_quoted('DATAKI_SERVER_URL', 'https://ai.datanet.ovh')
-configure_file(output: 'config.h', configuration: conf)
+configure_file(output: 'dataki-config.h', configuration: conf)
 config_inc = [include_directories('.'), include_directories('src')]
 
 # ---------------------------------------------------------------------------
@@ -71,6 +81,9 @@ sources = files(
   'src/app.c',
   'src/core/config.c',
   'src/core/secret.c',
+  'src/core/http.c',
+  'src/core/loopback.c',
+  'src/core/login.c',
   'src/ui/main_window.c',
   'src/ui/about_dialog.c',
 ) + tray_src + resources

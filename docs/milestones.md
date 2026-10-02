@@ -41,9 +41,13 @@ den Geräte-Key unverändert (Option A). Siehe `backend/README.md`.
 Offen: App-Links `assetlinks.json` (braucht Signatur-Fingerprint).
 
 ### M3 — Login (alle Clients)
-Desktop: Browser-Handoff per `127.0.0.1`-Loopback. Android: Custom-Tab →
-App-Link-Rücksprung. Geräte-Key im Secret-Store, Auth-Zustandsautomat, Auto-Start,
-`bootstrap`.
+**Desktop ✅** — Browser-Handoff per `127.0.0.1`-Loopback umgesetzt und
+end-to-end gegen das echte Backend getestet: „Sign in" → Loopback-Listener +
+System-Browser → Einmal-Code → `exchange` → Geräte-Key im Keyring (libsecret)
+→ `bootstrap` → App. Auto-Start mit gespeichertem Key, Abmelden (widerruft Key),
+Offline/401-Behandlung. Neue Core-Module: `http.c` (libcurl), `loopback.c`
+(GSocketService), `login.c` (Orchestrierung), echter `secret.c` (libsecret).
+**Android** — noch offen (Custom-Tab → App-Link-Rücksprung).
 
 ### M4 — Chat (alle Clients)
 SSE-Streaming, Modellwahl, Denken-Anzeige, Abbrechen, Chat-Liste/Verlauf,
